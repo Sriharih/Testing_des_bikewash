@@ -1,204 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery Page</title>
+    <title>Bike Wash Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f9fafb;
-        }
-        .navbar, .footer {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        .hero {
-            
-            background: url('https://images.unsplash.com/photo-1558981852-426c6c22a060?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            flex-direction: column;
-        }
-
-    
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.4);
-        }
-        .hero-content {
-            position: relative;
-            max-width: 600px;
-            padding: 20px;
-        }
-        .hero h1 {
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            gap: 5px;
-        }
-        .search-bar input {
-            padding: 10px;
-            width: 60%;
-            border: none;
-            border-radius: 5px;
-        }
-        .search-bar button {
-            padding: 10px;
-            background-color: #facc15;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-        .search-bar button:hover {
-            background-color: #fbbf24;
-        }
-        .categories {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-        .categories h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .category-card {
-            position: relative;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-        }
-        .category-card:hover {
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-        }
-        .category-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .category-card div {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.4);
-            color: white;
-            padding: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-        }
-        .footer {
-            background-color: #1f2937;
-            color: white;
-            padding: 40px 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .footer-section {
-            text-align: left;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .brand {
-            font-size: 20px;
-            font-weight: bold;
-            margin-left: 8px;
-        }
-
-        .description {
-            color: #d1d5db;
-            margin-bottom: 10px;
-        }
-
-        .social-links a {
-            color: #d1d5db;
-            margin-right: 10px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #3b82f6;
-        }
-
-        h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            list-style: none;
+            margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        ul li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .icon {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-        }
-
-        .blue {
-            color: #3b82f6;
-        }
-
-        .text-gray {
-            color: #9ca3af;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #374151;
-            margin-top: 20px;
-            padding-top: 20px;
-            text-align: center;
-            color: #d1d5db;
-        }
+        /* Navbar Styling */
         .navbar {
             background-color: white;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -206,45 +21,39 @@
             width: 100%;
             z-index: 10;
             top: 0;
-        }
-
-        .navbar-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 60px;
+            padding: 15px 20px;
         }
 
         .logo {
+            font-size: 22px;
+            font-weight: bold;
+            /*color: #0c3094;*/
+            text-decoration: none;
             display: flex;
             align-items: center;
-            font-size: 20px;
-            font-weight: bold;
-            color: #1E3A8A;
-            text-decoration: none;
         }
 
-        .logo-icon {
-            width: 30px;
-            height: 30px;
-            background-color: #1E3A8A;
-            border-radius: 50%;
-            margin-right: 10px;
+        .logo::before {
+            font-size: 18px;
+            margin-right: 8px;
+            color: #1E3A8A;
         }
 
         .menu {
             display: flex;
             gap: 20px;
+            align-items: center;
         }
 
         .menu a {
+            margin-right: 20px;
             text-decoration: none;
             color: #333;
-            padding: 10px;
             font-size: 16px;
+            padding: 10px;
             border-radius: 5px;
         }
 
@@ -252,86 +61,368 @@
             color: #1E3A8A;
         }
 
-        .login-btn, .logout-btn {
+        /* Login Button */
+        .menu .login-btn {
             background-color: #1E3A8A;
             color: white;
+            margin-right: 20px;
             padding: 8px 15px;
             border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
+            font-weight: bold;
         }
 
-        .login-btn:hover, .logout-btn:hover {
-            background-color: #3B82F6;
+        .menu .login-btn:hover {
+            background-color: #142865;
         }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            left: 50px;
+            right: 20px; /* Align to right */
+            top: 20px;
+            transform: translateY(-50%); background: none;
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                text-align: center;
+                padding: 10px 0;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                transform: translateY(-200%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .menu a {
+                display: block;
+                padding: 15px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+            .menu .login-btn{
+                margin-right: 10px;
+                font-size: 14px;
+            }
+
+            .menu.active {
+                display: flex;
+                transform: translateY(0);
+            }
+        }   
+        /* Hero Section */
+.hero {
+    background: url('https://images.unsplash.com/photo-1558981852-426c6c22a060?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar h3 {
+    margin: 10px;
+            padding: 10px 20px;
+            background-color: #1E3A8A;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;    
+}
+
+/* Categories Section */
+.categories {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-card div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+
+    .categories h2 {
+        font-size: 20px;
+    }
+}
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .footer {
+    background-color: #111827; /* Darker background for better contrast */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    text-align: left;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.description {
+    color: #d1d5db;
+    font-size: 14px;
+    text-align: center;
+    max-width: 250px;
+    margin: auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #9ca3af;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #3b82f6;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    text-align:center;/*contact and working tim*/
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    justify-content: center;
+}
+
+.icon {
+    font-size: 18px;
+    color: #3b82f6;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 15px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+        
 
     </style>
 </head>
 <body>
-
     <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="logo">
-                <div class="logo-icon"></div>
-                BikeWash
-            </a>
+        <a href="#" class="logo">BikeWash</a>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="menu" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="photoscroll.html">Gallery</a>
+            <a href="login.html">Book Service</a>
+            <a href="login.html" class="login-btn">Login</a>
 
-            <div class="menu">
-                <a href="index.html">Home</a>
-                <a href="photoscroll.html">Gallery</a>
-                <a href="login.html">Book Service</a>
-                <a href="#" id="admin-panel" style="display: none;">Admin</a>
-                <button id="logout-btn" class="logout-btn" style="display: none;">Logout</button>
-                <a href="login.html" id="login-btn" class="login-btn">Login</a>
-            </div>
         </div>
     </nav>
-
     <div class="hero">
         <div class="hero-content">
             <h1>SIMPLY ART. SIMPLY BEAUTIFUL.</h1>
             <p>For seventeen years, artists and buyers have trusted us to show and sell their art. Are you next? Join now.</p>
             <div class="search-bar">
-                <h3>Explore more!</h3>
+                <h3 onclick="scrollToCategories()" style="cursor: pointer;">Explore more!</h3>
             </div>
         </div>
     </div>
 
-   
-    <section class="categories">
+
+    <section class="categories" id="categories">
         <h2>Categories</h2>
         <div class="grid" id="categoryGrid"></div>
     </section>
 
+
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                
                 <div class="footer-section">
                     <div class="logo">
                         <i data-lucide="droplet" class="icon blue"></i>
-                        <span class="brand">BikeWash</span>
+                        <span class="brand"><div class="footer-section">
+                            <h3>BikeWash</h3></span>
+                        </div>
                     </div>
-                    <p class="description">
-                        Professional bike washing services at your doorstep. We care for your bike like it's our own.
-                    </p>
+                    <ul>
+                        <li><i data-lucide="phone" class="icon blue"></i> 
+                            Professional bike washing services at your doorstep.</li>
+                            <li><i data-lucide="phone" class="icon blue"></i> We care for your bike like it's our own.</li>
+                    </ul>
                     <div class="social-links">
-                        <a href="#"><i data-lucide="facebook" class="icon"></i></a>
                         <a href="#"><i data-lucide="twitter" class="icon"></i></a>
                         <a href="#"><i data-lucide="instagram" class="icon"></i></a>
                     </div>
                 </div>
                 
-                
                 <div class="footer-section">
-                    <br> <h3>    Contact Us</h3>
+                    <h3>Contact Us</h3>
                     <ul>
                         <li><i data-lucide="phone" class="icon blue"></i> +91 9452345876</li>
                         <li><i data-lucide="mail" class="icon blue"></i> contact@bikewash.com</li>
                         <li><i data-lucide="map-pin" class="icon blue"></i> 123 Wash Street, Bike City, BC 12345</li>
                     </ul>
                 </div>
-          
+                
                 <div class="footer-section">
                     <h3>Working Hours</h3>
                     <ul>
@@ -340,19 +431,12 @@
                     </ul>
                 </div>
             </div>
-           
+            
             <div class="footer-bottom">
                 <p>&copy; <span id="year"></span> BikeWash. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-        lucide.createIcons();
-    </script>
-
-
     <script>
         const categories = [
             { label: "Bike Wash", image: "https://5.imimg.com/data5/TF/FD/MY-25155805/bike-cleaning-service-500x500.jpg" },
@@ -365,7 +449,7 @@
             { label: "Trusted Zone", image: "https://door2doorcarwash.com/inside/images/project/bike_project-4.webp" },
             { label: "Waterless Wash & Interior Cleaning", image: "https://wp.driveu.in/wp-content/uploads/2023/09/Dashboard-Dressing.png" },
             { label: "Pressure Wash & Interior Cleaning", image: "https://wp.driveu.in/wp-content/uploads/2023/09/Exterior-Foam.png" },
-            { label: "Antiques & Collectibles", image: "https://source.unsplash.com/400x300/?antiques" }
+            { label: "Antiques & Collectibles", image: "https://5.imimg.com/data5/ZQ/DQ/WM/SELLER-27223723/car-and-bike-washing-service.jpg" }
         ];
 
         const categoryGrid = document.getElementById("categoryGrid");
@@ -379,7 +463,20 @@
             `;
             categoryGrid.appendChild(div);
         });
-    </script>
+        function toggleMenu() {
+            document.getElementById("nav-menu").classList.toggle("active");
+        }
+        document.getElementById("year").textContent = new Date().getFullYear();
+        lucide.createIcons();
+        function toggleMenu() {
+            document.getElementById("nav-menu").classList.toggle("active");
+        }
+        document.getElementById("year").textContent = new Date().getFullYear();
+        lucide.createIcons();
+        function scrollToCategories() {
+    document.getElementById("categories").scrollIntoView({ behavior: "smooth" });
+}
 
+    </script>
 </body>
-</html
+</html>
